@@ -1,0 +1,112 @@
+<div class="modal fade" id="creer_appro_modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <form id="appro_form">     
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Appro, retour, réception</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                   
+                    <div class="modal-body">
+                        <div class="block">
+                                        <label>Date d'appro</label>
+                                        <input type="text" name="appro_date" id="appro_date"></input>
+                                    </div>
+                                    <div class="block autocomplete">
+                                        <label>Client</label>
+                                        <input name="appro_client_combo" type="text" id="appro_client_combo"></input>
+                                    </div>     
+                                    <div class="block autocomplete"> 
+                                        <label>Article</label>
+                                        <select type="text" name="appro_article_combo" id="appro_article_combo"></select>
+                                        <button type="button" class="btn-success btn-sm" onclick="allocate_new_article('#appro_article_combo')">N</button>
+                                    </div> 
+                                    <div class="block">
+                                        <label>Type d'appro</label>
+                                        <select id="appro_type_combo" name="appro_type_combo" style="width:200px" onchange="appro_select_type(this)">
+                                            <option value="1">réception marchandise fournisseur</option>
+                                            <option value="2">appro ou retour client non fiscal</option>
+                                            <option value="3">appro ou retour client fiscal</option>
+                                        </select>
+                                    </div>
+                                    <div class="block fournisseur">
+                                        <label>N° d'ordre CapsTech</label>
+                                        <input type="text" name="appro_num_ordre" id="appro_num_ordre" value="0"></input>
+                                    </div>
+                                    <div class="block fournisseur">
+                                        <label>N° d'ordre fournisseur</label>
+                                        <input type="text" name="appro_num_ordre_fourn" id="appro_num_ordre_fourn" value="0"></input>
+                                    </div>
+
+                                    <div class="block autocomplete fiscal">
+                                        <label>texte fiscal</label>
+                                        <input name="appro_texte_fiscal" type="text" id="appro_texte_fiscal"value="XXLXX"></input>
+                                    </div>  
+                                    <div class="block autocomplete">
+                                        <label>Centilisation</label>
+                                        <select id="appro_centilisation" name="appro_centilisation" style="width:200px" >
+                                            <option value="75">75</option>
+                                            <option value="15">15</option>
+                                            <option value="37.5">37.5</option>
+                                            <option value="150">150</option>
+                                            <option value="300">300</option>
+                                            <option value="450">450</option>
+                                            <option value="600">600</option>
+                                            <option value="1200">1200</option>
+                                            <option value="1500">1500</option>
+                                        </select>
+                                    </div>  
+                                    <div class="block autocomplete fiscal">
+                                        <label>Numéro de DAE</label>
+                                        <input name="appro_dae" type="text" id="appro_dae"></input>
+                                    </div> 
+                                    <div class="block fiscal">
+                                        <label>Type timbre</label>
+                                        <select name="appro_type_timbre" id="appro_type_timbre" style="width:200px" onchange="">
+                                            <option value="VERT_CHAMPAGNE">vert champagne</option>
+                                            <option value="LIE_DE_VIN">lie de vin</option>
+                                            <option value="VERT">vert</option>
+                                            <option value="BLEU">bleu</option>
+                                            <option value="BLEU_BFAV">bleu BFAV</option>
+                                            <option value="BLANC_18%">blanc 18%</option>
+                                            <option value="BLANC_40%">blanc 40%</option>
+                                        </select>
+                                    </div>  
+                                    <div class="block">
+                                        <label>Quantité</label>
+                                        <input type="number" step=1 name="appro_quantite" id="appro_quantite" value="0"></input>
+                                    </div>
+                                    <div class="block">
+                                        <label>Prix d'achat</label>
+                                        <input type="number" step=0.01 name="appro_prix_achat" id="appro_prix_achat" value="0.00"></input>
+                                    </div>
+                                    <div class="block">
+                                        <label>Quantité par carton</label>
+                                        <input type="number" step=1 name="appro_quantite_par_carton" id="appro_quantite_par_carton" value="2500" ></input>
+                                    </div>
+                                    <div class="block">
+                                        <label>Zone de stockage</label>
+                                        <input type="number" step=1 name="appro_lieu" id="appro_lieu" value="100"></input>
+                                    </div>
+                                    <div class="block">
+                                        <label>Numéro de palette</label>
+                                        <input type="text" name="appro_num_palette" id="appro_num_palette" value="P_0000"></input>
+                                    </div>
+                                    
+                                    <div class="block" style="height:auto">
+                                        <label>Remarques</label>
+                                            <textarea type="text" rows="3" cols="50" name="appro_rem" id="appro_rem"></textarea>
+                                    </div>
+
+                    <div class="save_bar">
+                        <button type="button" class="btn-sm btn-secondary" data-dismiss="modal">Fermer</button>
+                        <input  class="btn-sm btn-primary" type="submit">Enregistrer</input>
+                    </div>
+                </div>    
+                </div>
+                
+            </div>
+    </form>
+</div>
